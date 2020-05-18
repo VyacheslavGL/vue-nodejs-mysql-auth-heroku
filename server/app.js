@@ -231,14 +231,14 @@ app.post('/login', (req, res) => {
 let port = process.env.PORT || 3000;
 
 //включаем сервер статических файлов из папки dist
-// app.use(express.static(path.join(__dirname, 'dist')));
+app.use(express.static(path.join(__dirname, 'dist')));
 
 // app.use('/', serveStatic(path.join(__dirname, 'dist')));
 // app.use(serveStatic(path.join(__dirname, 'dist')));
 //на все запросы методом get отвечаем содержимым файлом index.html
 //чтобы при обращении к несуществующим вайлам на сервере грузился именно index.html
 // а дальше vue router сам разберется - вместо файла htaccess
-app.get('*', (req, res) => res.sendFile(path.join(__dirname, 'dist/index.html')));
+// app.get('*', (req, res) => res.sendFile(path.join(__dirname, 'dist/index.html')));
 
 app.listen(port, () => {
     console.log(`Сервер успешно запущен на порту ${port}`)
