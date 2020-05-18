@@ -6,7 +6,7 @@ const mysql = require('mysql2');
 const path = require('path');
 // const serveStatic = require('serve-static');
 
-const config = require('./config');
+// const config = require('./config');
 // const bcrypt = require('bcrypt');
 // const jwt = require('jsonwebtoken');
 const bodyParser = require('body-parser');
@@ -148,9 +148,9 @@ app.get('/deletepost/:id', (req, resp) =>{
     })
 });*/
 
-app.get('/', function(req, res){
+/*app.get('/', function(req, res){
     res.redirect('/login');
-});
+});*/
 
 /*
 
