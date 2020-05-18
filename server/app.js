@@ -1,6 +1,6 @@
 "use strict";
 const express = require('express');
-// const mysql = require('mysql2');
+const mysql = require('mysql2');
 
 //стандартный модуль ноды для работы с путями файлов
 // const path = require('path');
@@ -23,7 +23,7 @@ const app = express();
     password: ''
 });*/
 
-/*const db = mysql.createConnection({
+const db = mysql.createConnection({
     host: 'eu-cdbr-west-03.cleardb.net',
     user: 'bedd78861a3048',
     database: 'heroku_98f3c35031abbb1',
@@ -37,7 +37,7 @@ db.connect((err) =>{
         // console.log('MySQL in not connected....');
     }
     console.log('MySQL Connected...');
-});*/
+});
 
 // CORS middleware
 const allowCrossDomain = function(req, res, next) {
@@ -148,6 +148,12 @@ app.get('/deletepost/:id', (req, resp) =>{
     })
 });*/
 
+app.get('/', function(req, res){
+    res.redirect('/login');
+});
+
+/*
+
 //Register user Admin
 app.post('/register-admin', (req, res) => {
    let sql = 'SELECT * FROM users WHERE email = ?';
@@ -221,6 +227,7 @@ app.post('/login', (req, res) => {
         res.status(200).send({ auth: true, token: token, user: user });
     })
 });
+*/
 
 
 let port = process.env.PORT || 3000;
