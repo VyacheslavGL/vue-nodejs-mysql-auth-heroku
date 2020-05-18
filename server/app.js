@@ -231,7 +231,7 @@ app.post('/login', (req, res) => {
 let port = process.env.PORT || 3000;
 
 //включаем сервер статических файлов из папки dist
-app.use(express.static(path.join(__dirname, 'dist')));
+// app.use(express.static(path.join(__dirname, 'dist')));
 
 // app.use('/', serveStatic(path.join(__dirname, 'dist')));
 // app.use(serveStatic(path.join(__dirname, 'dist')));
