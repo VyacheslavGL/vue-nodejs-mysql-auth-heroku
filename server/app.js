@@ -3,12 +3,12 @@ const express = require('express');
 const mysql = require('mysql2');
 
 //стандартный модуль ноды для работы с путями файлов
-const path = require('path');
-const serveStatic = require('serve-static');
+// const path = require('path');
+// const serveStatic = require('serve-static');
 
-// const config = require('./config');
-// const bcrypt = require('bcrypt');
-// const jwt = require('jsonwebtoken');
+const config = require('./config');
+const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
 const bodyParser = require('body-parser');
 
 const app = express();
@@ -128,7 +128,7 @@ app.get('/deletepost/:id', (req, resp) =>{
 */
 
 //Register user Admin
-/*app.post('/register-admin', (req, res) => {
+app.post('/register-admin', (req, res) => {
     let sql = 'INSERT INTO users (name, email, user_pass, is_admin) VALUES (?,?,?,?)';
     db.query(sql, [
         req.body.name,
@@ -146,13 +146,12 @@ app.get('/deletepost/:id', (req, resp) =>{
         })
 
     })
-});*/
+});
 
 /*app.get('/', function(req, res){
     res.redirect('/login');
 });*/
 
-/*
 
 //Register user Admin
 app.post('/register-admin', (req, res) => {
@@ -227,7 +226,6 @@ app.post('/login', (req, res) => {
         res.status(200).send({ auth: true, token: token, user: user });
     })
 });
-*/
 
 
 let port = process.env.PORT || 3000;
