@@ -1,6 +1,6 @@
 "use strict";
 const express = require('express');
-const mysql = require('mysql2');
+// const mysql = require('mysql2');
 
 //стандартный модуль ноды для работы с путями файлов
 // const path = require('path');
@@ -23,7 +23,7 @@ const app = express();
     password: ''
 });*/
 
-const db = mysql.createConnection({
+/*const db = mysql.createConnection({
     host: 'eu-cdbr-west-03.cleardb.net',
     user: 'bedd78861a3048',
     database: 'heroku_98f3c35031abbb1',
@@ -37,7 +37,7 @@ db.connect((err) =>{
         // console.log('MySQL in not connected....');
     }
     console.log('MySQL Connected...');
-});
+});*/
 
 // CORS middleware
 const allowCrossDomain = function(req, res, next) {
